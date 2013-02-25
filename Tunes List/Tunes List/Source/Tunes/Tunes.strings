@@ -1,0 +1,7 @@
+//
+// << Add Legal Copyright Here >>
+//
+
+TunesStart		= "Opening iTunes database";
+TunesRead		= "Reading iTunes database";
+TunesEnd		= "Closing iTunes database";

@@ -1,0 +1,24 @@
+//
+// << Add Legal Copyright Here >>
+//
+
+
+#ifndef SINGLETON_GCD
+#define SINGLETON_GCD( classname )					\
+													\
+	+ (classname *)shared##classname {				\
+													\
+		static dispatch_once_t pred;				\
+		static classname * shared##classname;       \
+		dispatch_once( &pred, ^{					\
+			shared##classname = [[self alloc] init];\
+		}); return shared##classname;				\
+	}
+#endif
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+	#import "Communication.h"
+	#import "MasterData.h"
+	#import "AppDelegate.h"
+#endif

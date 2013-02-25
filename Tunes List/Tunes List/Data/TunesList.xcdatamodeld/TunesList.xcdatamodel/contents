@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TunesDB" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="version" attributeType="String" syncable="YES"/>
+        <relationship name="relToTracks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TunesTracks" inverseName="relToDB" inverseEntity="TunesTracks" syncable="YES"/>
+    </entity>
+    <entity name="TunesTracks" syncable="YES">
+        <attribute name="hasVideo" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="location" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="trackID" attributeType="Integer 32" indexed="YES" syncable="YES"/>
+        <relationship name="relToDB" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TunesDB" inverseName="relToTracks" inverseEntity="TunesDB" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TunesDB" positionX="1962" positionY="369" width="128" height="103"/>
+        <element name="TunesTracks" positionX="2142" positionY="369" width="128" height="133"/>
+    </elements>
+</model>
